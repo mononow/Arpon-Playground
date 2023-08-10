@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "rootDir": ".",
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "noImplicitAny": true,
+    "declaration": true,
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "jsx": "preserve",
+    "baseUrl": "./",
+    "paths": {
+      "@": ["./"],
+      "@/": ["src/"],
+      "@/*": ["src/*"],
+      "@assets/*": ["assets/*"],
+      "@c/*": ["src/components/*"],
+      "@arpon": ["arpon/"]
+    }
+  },
+  "references": [
+    {
+      "path": "./arpon"
+    }
+  ],
+  "exclude": ["node_modules", ".next", "out", "config/**", "babel.config.js", "jest.config.js"],
+  "include": ["arpon/**/*.ts", "arpon/*.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"]
+}

@@ -1,0 +1,174 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import './intermediary/UIComposite.css';
+
+@tailwind utilities;
+
+:root {
+  /*
+  $swatch_1: #0a0a0b;
+  $swatch_2: #615f5d;
+  $swatch_3: #b09c89;
+  $swatch_4: #8b7463;
+  $swatch_5: #433938;
+  $swatch_6: #cdbdad;
+  $swatch_7: #4987b5;
+  */
+  --primary: #c7855b;
+  --secondary: #c3967b;
+  --background: #101219;
+  --bgg-tl: #3d3e40;
+  --bgg-br: #0b0e16;
+  --bg-static: #151518;
+}
+
+@layer base {
+  /* -------------------------------------------------------
+  Variable font.
+  Usage:
+
+    html { font-family: 'Inter', sans-serif; }
+    @supports (font-variation-settings: normal) {
+      html { font-family: 'Inter var', sans-serif; }
+    }
+  */
+  /*  @font-face {
+    font-family: 'Inter var';
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+    font-named-instance: 'Regular';
+    src: url('../fonts/Inter-roman.var.woff2?v=3.19') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Inter var';
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: italic;
+    font-named-instance: 'Italic';
+    src: url('../fonts/Inter-italic.var.woff2?v=3.19') format('woff2');
+  } */
+
+  /* --------------------------------------------------------------------------
+  [EXPERIMENTAL] Multi-axis, single variable font.
+
+  Slant axis is not yet widely supported (as of February 2019) and thus this
+  multi-axis single variable font is opt-in rather than the default.
+
+  When using this, you will probably need to set font-variation-settings
+  explicitly, e.g.
+
+    * { font-variation-settings: "slnt" 0deg }
+    .italic { font-variation-settings: "slnt" 10deg }
+
+  */
+  @font-face {
+    font-family: 'Inter var experimental';
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: oblique 0deg 10deg;
+    src: url('../fonts/Inter.var.woff2?v=3.19') format('woff2');
+  }
+
+  /* @font-face {
+    font-family: 'ITC Avant Garde Gothic Std';
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: local('ITC Avant Garde Gothic Std'), url('../fonts/ITCAvantGardeStdBk.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'ITC Avant Garde Gothic Std';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local('ITC Avant Garde Gothic Std'), url('../fonts/ITCAvantGardeStdMd.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'ITC Avant Garde Gothic Std';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local('ITC Avant Garde Gothic Std'), url('../fonts/ITCAvantGardeStdDemi.woff') format('woff');
+  } */
+
+  html,
+  body,
+  .app {
+    padding: 1px;
+    height: calc(100vh - 2px);
+    width: calc(100vw - 2px);
+  }
+
+  html,
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+    letter-spacing: 0.024em;
+    font-variation-settings: 'wght' 400, 'slnt' 0;
+    font-feature-settings: 'liga' on, 'calt' on, 'salt' off, 'cv02', 'cv03', 'cv04', 'cv11';
+    touch-action: pan-x pan-y;
+    text-rendering: auto;
+
+    @apply bg-no-repeat;
+    @apply bg-background;
+    @apply text-base;
+  }
+
+  body {
+    background-image: radial-gradient(239.85% 97.12% at 4.03% 1.13%, var(--bgg-tl) 0%, var(--bgg-br) 81.77%);
+    animation: bg 3s 1;
+  }
+
+  .app::before {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    content: '';
+    background: url('@assets/otis-redding.png') repeat;
+    opacity: 0.12;
+
+    @apply pointer-events-none;
+    @apply select-none;
+  }
+}
+
+@keyframes bg {
+  from {
+    background-size: 220% 220%;
+    opacity: 0;
+  }
+
+  to {
+    background-size: 100% 100%;
+    opacity: 1;
+  }
+}
+
+.color-inherit {
+  color: inherit !important;
+}
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+.btn-project {
+  box-shadow: 0 0 5px 1px rgb(62 59 172 / 0%), 0 5px 7px rgb(191 191 191 / 0%), inset 0 -17px 30px -3px #8c8c8c8a;
+}
+
+.btn-project:hover {
+  box-shadow: 0 0 5px 1px rgb(62 59 172 / 18%), 0 5px 7px rgb(191 191 191 / 10%), inset 0 -17px 30px -3px #ffffff8a;
+}
+
+/* svg {
+  border: 1px solid #aaa;
+} */
+
+/* .grid > * {
+  outline: 1px solid #aaa;
+} */

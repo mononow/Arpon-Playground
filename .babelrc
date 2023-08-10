@@ -1,0 +1,18 @@
+{
+  "presets": ["next/babel", "@babel/preset-typescript"],
+  "plugins": [
+    "lodash",
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@": "./src",
+          "@assets": "./assets",
+          "@c": "./src/components",
+          "@arpon": "./arpon"
+        }
+      }
+    ]
+  ]
+}

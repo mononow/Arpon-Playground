@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "noEmit": false,
+    "composite": true,
+    "paths": {
+      "@arpon": ["./"],
+      "arpon": ["./"]
+    }
+  },
+  "exclude": ["out", "jest.config.js"],
+  "include": ["**/*.ts"]
+}
